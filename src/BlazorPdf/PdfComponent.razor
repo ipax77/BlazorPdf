@@ -1,0 +1,27 @@
+﻿@inject BlazorPdfJsInterop blazorPdfJsInterop
+
+<div class="my-component">
+    This component is defined in the <strong>BlazorPdf</strong> library.
+</div>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-primary" @onclick="SayHello">SayHello</button>
+    <button type="button" class="btn btn-primary" @onclick="GeneratePdf">GeneratePdf</button>
+</div>
+
+<div id="pdfcontainer">
+
+</div>
+
+@code {
+
+    private void SayHello()
+    {
+        _ = blazorPdfJsInterop.SayHello();
+    }
+
+    private void GeneratePdf()
+    {
+        _ = blazorPdfJsInterop.GeneratePdf();
+    }
+}
