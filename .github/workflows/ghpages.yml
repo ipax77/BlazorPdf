@@ -3,10 +3,11 @@ name: Deploy Blazor WASM to GitHub Pages
 on:
     push:
         branches: [main]
-
 jobs:
     deploy-to-github-pages:
         runs-on: ubuntu-latest
+        permissions:
+          contents: write
         steps:
         - uses: actions/checkout@v3
 
@@ -35,3 +36,4 @@ jobs:
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./release/wwwroot
+
