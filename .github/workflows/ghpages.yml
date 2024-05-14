@@ -23,7 +23,7 @@ jobs:
           uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
           with:
             html_path: release/wwwroot/index.html
-            base_href: /BlazorPdfSample/    
+            base_href: /BlazorPdf/    
         
         - name: copy index.html to 404.html
           run: cp release/wwwroot/index.html release/wwwroot/404.html
