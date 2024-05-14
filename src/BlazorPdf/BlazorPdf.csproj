@@ -15,4 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.4" />
   </ItemGroup>
 
+  <!-- <Target Name="RunNpmBuild" BeforeTargets="Build">
+      <Exec Command="cd $(ProjectDir)jslib &amp;&amp; npm run build" />
+  </Target> -->
 </Project>

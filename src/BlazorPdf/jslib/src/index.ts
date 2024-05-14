@@ -2,11 +2,7 @@ import { Template, GenerateProps, BLANK_PDF, PreviewProps } from '@pdfme/common'
 import { generate } from '@pdfme/generator';
 import { Viewer } from '@pdfme/ui';
 
-export function HelloWorld() {
-		console.log("Hello, world");
-}
-
-export function GeneratePdf() {
+export function GeneratePdf(a: string, b: string, c: string) {
 	const template: Template = {
 		basePdf: BLANK_PDF,
 		schemas: [
@@ -14,26 +10,26 @@ export function GeneratePdf() {
 			a: {
 			  type: 'text',
 			  position: { x: 0, y: 0 },
-			  width: 10,
+			  width: 200,
 			  height: 10,
 			},
 			b: {
 			  type: 'text',
 			  position: { x: 10, y: 10 },
-			  width: 10,
+			  width: 200,
 			  height: 10,
 			},
 			c: {
 			  type: 'text',
 			  position: { x: 20, y: 20 },
-			  width: 10,
+			  width: 200,
 			  height: 10,
 			},
 		  },
 		],
 	  };
 	  
-	const inputs = [{ a: 'a1', b: 'b1', c: 'c1' }];
+	const inputs = [{ a: a, b: b, c: c }];
 
 	generate({ template, inputs } as GenerateProps).then((pdf) => {
 		// console.log(pdf);

@@ -19,16 +19,10 @@ public class BlazorPdfJsInterop : IAsyncDisposable
             "import", "./_content/BlazorPdf/js/bundle.js").AsTask());
     }
 
-    public async ValueTask SayHello()
+    public async ValueTask GeneratePdf(string header1, string header2, string header3)
     {
         var module = await moduleTask.Value;
-        await module.InvokeVoidAsync("HelloWorld");
-    }
-
-    public async ValueTask GeneratePdf()
-    {
-        var module = await moduleTask.Value;
-        await module.InvokeVoidAsync("GeneratePdf");
+        await module.InvokeVoidAsync("GeneratePdf", header1, header2, header3);
     }
 
     public async ValueTask DisposeAsync()
