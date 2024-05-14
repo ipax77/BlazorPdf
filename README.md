@@ -1,2 +1,0 @@
-# BlazorPdf
- pdf generator
